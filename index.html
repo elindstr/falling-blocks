@@ -9,38 +9,38 @@
 </head>
 <body>
 
-<canvas id="main_canvas"></canvas>
-<div class="side_class">
-  <h1>Tetris</h1><br>
-  Time: <span id="display_timer"></span><br>
-  Lines: <span id="display_lines"></span><br>
-  Level: <span id="display_level"></span><br><br><br>
-  <button id="pause_button" class="button1" type="button" onclick="pause_button()">Pause Game</button><br>
-  <button class="button1" type="button" onclick="newgame_button()">New Game</button><br>
-  <br>
-  <span id="display_endgame"></span>
-</div>
+  <main>
+    <canvas id="main_canvas"></canvas>
 
-<div id="myModal1" class="modal1">
-  <div class="modal-content1">
-  <center>
-    <h1>Game Over</h1>
+    <aside>
+      <h1>Tetris</h1><br>
+      Time: <span id="display_timer"></span><br>
+      Lines: <span id="display_lines"></span><br>
+      Level: <span id="display_level"></span><br><br><br>
+      <button id="pause_button" onclick="pause_button()">Pause Game</button><br>
+      <button onclick="newgame_button()">New Game</button><br>
+      <br>
+      <span id="display_endgame"></span>
+    </aside>
+  </main>
 
-    <button class="button1" type="button" onclick="CloseHSPage()">Play Again</button><br><br>
+  <div id="myModal1" class="modal1">
+    <div class="modal-content1">
+      <h1>Game Over</h1>
+      <button onclick="CloseHSPage()">Play Again</button><br><br>
 
-    <form id="myform" onSubmit="HSButt_disabled()">
-      <b>Sign the Honor Roll</b><br>
-      Name: <input name="player_name" type="text" id="player_name" maxlength="50" required><br>
-      Score: <input name="player_score" id="score" readonly></input><br>
-      <button id="HS_submit_button" type="submit">Sign</button>
-    </form>
+      <form id="myform" onSubmit="HSButt_disabled()">
+        <b>Sign the Honor Roll</b><br>
+        Name: <input name="player_name" type="text" id="player_name" maxlength="50" required><br>
+        Score: <input name="player_score" id="score" readonly></input><br>
+        <button id="HS_submit_button" type="submit">Sign</button>
+      </form>
 
-    <br>
-    <b>Honor Roll</b>
-    <ol id="highscores"></ol>
-  </center>
+      <br>
+      <b>Honor Roll</b>
+      <ol id="highscores"></ol>
+    </div>
   </div>
-</div>
 
 <script src="assets/js/game.js"></script>
 </body>

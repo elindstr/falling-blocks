@@ -1,10 +1,10 @@
-div.side_class {
+aside {
     position: fixed;
     top: 10px;
     left: 10px;
     text-align: center;
 }
-button.button1 {
+button {
     width: 95px
 }
 .modal1 {

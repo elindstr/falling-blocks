@@ -1,5 +1,4 @@
-
-//Section ___: Initialize Canvas
+//Initialize Canvas
 var canvas = document.getElementById("main_canvas");
 
 canvas.width = window.innerWidth
@@ -42,7 +41,7 @@ function initBoardSize() {
   board_height = tile_size * Cols
 }
 
-//Section ___: Initialize Board Elements
+//Initialize Board Elements
 var tile = []
 for (col = 0; col < Cols; col++){
   tile.push([])
@@ -52,7 +51,7 @@ for (col = 0; col < Cols; col++){
 }
 var tile_orientation = 0
 
-//Section ___: Game Speed Variables
+//Game Speed Variables
 var gravity = 28                 //lower = faster
 var DownMovement = tile_size*2   //down button speed
 var level_increment = 2
@@ -66,7 +65,7 @@ function NewLineCompleted() {
   }
 }
 
-//Section ___: Prepare Side Bar
+//Prepare Side Bar
 var stats_level = 1
 var stats_lines = 0
 var side_timer = 0
@@ -82,7 +81,7 @@ function draw_side_bar () {
   document.getElementById("score").value = stats_lines    //for high score data (TODO: could improve)
 }
 
-//Section ___: Initialize Tiles
+//Initialize Tiles
 function getRandomInt(max) {
   return RandomRow = Math.floor(Math.random() * max);
 }
@@ -268,7 +267,7 @@ function NewPiece (){
 
 }
 
-//Section __: draw tile borders
+//Draw Tile Borders
 function draw_borders(){
   //for (col = 0; col < Cols; col++){
   //  for (row = 0; row < Rows; row++){
@@ -289,7 +288,7 @@ function draw_borders(){
   ctx.stroke();
 }
 
-//Section __: draw existing pieces
+//Draw Existing Pieces
 function draw_existing_pieces() {
   for (col = 0; col < Cols; col++){
     for (row = 0; row < Rows; row++){
@@ -305,7 +304,7 @@ function draw_existing_pieces() {
   }
 }
 
-//Section __: draw pieces
+//Draw Pieces
 function draw_pieces() {
   for (bit = 0; bit < Object.keys(Tile_Bit).length; bit++) {
     if (Tile_Bit[bit].alive == true) {
@@ -319,7 +318,7 @@ function draw_pieces() {
   }
 }
 
-//Section ___: User Left-Right-Flip Inputs
+//User Left-Right-Flip Inputs
 function keydown(event) {
   if (event.keyCode == 13) { //return
     event.preventDefault()
@@ -851,7 +850,7 @@ function CheckLines() {
   }
 }
 
-//Section ___: Game Loop
+//Game Loop
 GameTimer = setInterval(startTime, 1000);
 InitTiles ()
 NewPiece ()
@@ -871,6 +870,7 @@ function newgame_button(){
   InitTiles()
   NewPiece()
   Pause = false
+  document.getElementById("pause_button").textContent = "Pause Game"
   clearInterval(GameTimer)
   GameTimer = setInterval(startTime, 1000);
   window.requestAnimationFrame(MainLoop)
@@ -965,7 +965,7 @@ var progress = 0
 window.requestAnimationFrame(MainLoop)
 
 
-//Section ___: High Scores
+//High Scores
 var modal1 = document.getElementById("myModal1");
 function DisplayHSPage() {
   modal1.style.display = "block";
