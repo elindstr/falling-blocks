@@ -989,7 +989,7 @@ Get_JSON_Scores_On_Load()
 function Get_JSON_Scores_On_Load() {
     if (Do_Not_Fetch == false) {
     const Errors = document.getElementById('error');
-    let file = "hs.json";
+    let file = "assets/js/hs.json";
     fetch(file, {cache: 'no-cache'})
       .then(function(response) {
           //  If the response isn't OK
@@ -1068,7 +1068,7 @@ Myform.addEventListener("submit", function (event) {
   //console.log(formData)
 
   // fetch request
-  fetch ("hs.php", {
+  fetch ("assets/js/hs.php", {
     method: "post",
     body: formData
   })
